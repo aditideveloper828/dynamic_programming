@@ -1,3 +1,10 @@
+"""
+Line Edit
+Compare new and old versions of files to find out the differences in terms of deletion, insertion, alteration, and substitution of lines.
+Author: Aditi Sharma
+Date: 1/6/2023
+"""
+
 def lcs(s1, s2):
     """takes two strings as parameters and returns 
     the longest common subsequence,without using recursion"""
@@ -153,74 +160,41 @@ def line_edits(s1, s2):
    
 
 
-s1 = "Line1\nLine2"
-s2 = ""
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-
-print()
-
-s2 = "Line1\nLine2"
-s1 = ""
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-
-print()
-
-#should get ('D', 'Line1', '')
-s1 = "Line1\nLine2\nLine3\nLine4\n"
-s2 = "Line1\nLine3\nLine4\nLine5\n"
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-print()
-
-s1 = "Line1\nLine2\nLine3\nLine4\n"
-s2 = "Line5\nLine4\nLine3\n"
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-print()
-s2 = ""
-s1 = ""
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-
-print()
-
-s1 = "Line1\nLine3\nLine5\n"
-s2 = "Twaddle\nLine5\n"
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
+def test():
+    """Test cases for assignment"""
+    s2 = "Line1\nLine2"
+    s1 = ""
+    table = line_edits(s1, s2)
+    for row in table:
+        print(row)
+    print()
+    #should get output: ('D', 'Line1', '')
 
 
-#should get
-"""('D', 'Line1', '')↩
-('S', 'Line3', 'Twaddle')↩
-('C', 'Line5', 'Line5')"""
+    s1 = "Line1\nLine2\nLine3\nLine4\n"
+    s2 = "Line1\nLine3\nLine4\nLine5\n"
+    table = line_edits(s1, s2)
+    for row in table:
+        print(row)
+    print()
+    #should get output:
+    """('D', 'Line1', '')↩
+    ('S', 'Line3', 'Twaddle')↩
+    ('C', 'Line5', 'Line5')"""
 
-print()
+    print()
 
-s1 = "Line1\nLine2\nLine3\nLine4\nLine5\n"
-s2 = "Line3\nLine2\n"
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
-    
-print()
-#should get
-"""('D', 'Line1', '')
-('D', 'Line2', '')
-('C', 'Line3', 'Line3')
-('D', 'Line4', '')
-('S', 'Line5', 'Line2')"""
+    s1 = "Line1\nLine2\nLine3\nLine4\nLine5\n"
+    s2 = "Line3\nLine2\n"
+    table = line_edits(s1, s2)
+    for row in table:
+        print(row)    
+    print()
+    #should get output:
+    """('D', 'Line1', '')
+    ('D', 'Line2', '')
+    ('C', 'Line3', 'Line3')
+    ('D', 'Line4', '')
+    ('S', 'Line5', 'Line2')"""
 
-s1 = "Line1\nLine 2a\nLine3\nLine4\n"
-s2 = "Line5\nline2\nLine3\n"
-table = line_edits(s1, s2)
-for row in table:
-    print(row)
+test()
