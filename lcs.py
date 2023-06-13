@@ -1,3 +1,10 @@
+"""
+Longest Common Subsequence
+Bottom-up DP function for returning the maximum length subsequence of the two strings s1 and s2
+Author: Aditi Sharma
+Date: 1/6/2023
+"""
+
 def lcs(s1, s2):
     """takes two strings as parameters and returns 
     the longest common subsequence,without using recursion"""
@@ -34,20 +41,21 @@ def lcs(s1, s2):
     
     return longest_seq
 
-s1 = "Look at me, I can fly!"
-s2 = "Look at that, it's a fly"
-print(lcs(s1, s2))
+def test():
+    """Test cases for assignment"""
+    s1 = "Look at me, I can fly!"
+    s2 = "Look at that, it's a fly"
+    print(lcs(s1, s2))
+    #should get output: Look at ,  a fly
 
-s1 = "abcdefghijklmnopqrstuvwxyz"
-s2 = "ABCDEFGHIJKLMNOPQRSTUVWXYS"
-print(lcs(s1, s2))
+    s1 = "abcdefghijklmnopqrstuvwxyz"
+    s2 = "ABCDEFGHIJKLMNOPQRSTUVWXYS"
+    print(lcs(s1, s2))
+    #should get no output
 
-s1 = "balderdash!"
-s2 = "balderdash!"
-print(lcs(s1, s2))
+    s1 = "balderdash!"
+    s2 = "balderdash!"
+    print(lcs(s1, s2))
+    #should get output: balderdash!
 
-
-s1 = "*abbcccddddeeeeeffffgghhijjkkkllllmmmmm*"
-s2 = "abcdefghijklmnopqrst"
-lcs_string = lcs(s1, s2)
-print(lcs_string)
+test()
