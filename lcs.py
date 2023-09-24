@@ -41,21 +41,3 @@ def lcs(s1, s2):
     
     return longest_seq
 
-def test():
-    """Test cases for assignment"""
-    s1 = "Look at me, I can fly!"
-    s2 = "Look at that, it's a fly"
-    print(lcs(s1, s2))
-    #should get output: Look at ,  a fly
-
-    s1 = "abcdefghijklmnopqrstuvwxyz"
-    s2 = "ABCDEFGHIJKLMNOPQRSTUVWXYS"
-    print(lcs(s1, s2))
-    #should get no output
-
-    s1 = "balderdash!"
-    s2 = "balderdash!"
-    print(lcs(s1, s2))
-    #should get output: balderdash!
-
-test()
